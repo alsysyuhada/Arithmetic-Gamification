@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Urutkan Angka</title>
+</head>
+<style>
+    body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+#game-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.grid input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #ccc;
+}
+
+#generate-button, #check-button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#result {
+    font-weight: bold;
+}
+
+
+</style>
+<body>
+    <h1>Urutkan Angka</h1>
+    <div id="game-container">
+        <div id="puzzle" class="grid"></div>
+        <button id="generate-button">Generate</button>
+        <button id="check-button">Cek</button>
+    </div>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+<script>
+const puzzle = document.getElementById('puzzle');
+const generateButton = document.getElementById('generate-button');
+const checkButton = document.getElementById('check-button');
+const result = document.getElementById('result');
+let generatedNumbers = [];
+let maxBoxes;
+
+function generateRandomNumber() {
+    maxBoxes = 7; // Random antara 10 hingga 20 kotak
+    generatedNumbers = [];
+
+    for (let i = 0; i < maxBoxes; i++) {
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        generatedNumbers.push(randomNumber);
+    }
+
+    displayPuzzle();
+}
+
+function displayPuzzle() {
+    puzzle.innerHTML = '';
+
+    generatedNumbers.forEach((number, index) => {
+        const cell = document.createElement('input');
+        cell.type = 'text';
+        cell.maxLength = 2;
+        cell.classList.add('grid-cell');
+        cell.value = '';
+        cell.placeholder = '_'; // Tambahkan placeholder '_'
+        puzzle.appendChild(cell);
+    });
+}
+
+generateButton.addEventListener('click', generateRandomNumber);
+
+function checkOrder() {
+    const inputCells = puzzle.querySelectorAll('.grid-cell');
+    let isCorrect = true;
+    let userInputArray = [];
+
+    inputCells.forEach((cell) => {
+        const userInput = parseInt(cell.value, 10);
+
+        if (!isNaN(userInput) && userInput >= 1 && userInput <= 100) {
+            userInputArray.push(userInput);
+        }
+    });
+
+    if (isCorrectSequence(userInputArray) && userInputArray.length === maxBoxes) {
+        result.textContent = 'Selamat, Anda berhasil mengurutkan angka!';
+    } else {
+        result.textContent = 'Urutan angka tidak benar atau belum semua kotak terisi.';
+    }
+}
+
+function isCorrectSequence(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] !== arr[i - 1] + 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
+checkButton.addEventListener('click', checkOrder);
+
+generateRandomNumber();
+
+</script>
+</html>

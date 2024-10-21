@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+*{
+	user-select: none;
+}
+
+html,body {
+	height: 100%;
+	width: 100%;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.bg-img{
+	background-image: url(../gambar/bg2.png);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: 100% 100%;
+	filter: blur(0.3vw) brightness(90%);
+}
+
+.pilihan-login, .table-index{
+	display: grid;
+	width: 35vw;
+	height: 65vh;
+	place-items: center;
+	transform: translate(33vw,20vh);
+	border: 0.3vw solid #ff0;
+	border-radius: 50px;
+	position: absolute;
+	top: 0vw;
+	box-shadow: 0.3vw 0.3vw #f5deb345;
+}
+
+.table-index{
+	width: 83vw;
+  height: 75vh;
+  place-items: center;
+  transform: translate(7vw,12vh);
+}
+
+#masuk-atau-daftar {
+	font-size: 2.5vw;
+	font-weight: 900;
+	letter-spacing: 0.3vw;
+	text-align: center;
+	color: #00116f;
+	font-family: fantasy;
+	background: #d2edf71a;
+	text-transform: uppercase;
+	padding: 0 1.5vw;
+}
+
+input {
+	font-family: 'Roboto Condensed', sans-serif;
+	border-radius: 1em;
+	padding-left: 2vw;
+	font-size: 2.5vw;
+	margin: 0 1vw 1vw;
+	width: 85%;
+	box-shadow: 0.1em 0.15em #5bbde8;
+	background: #fff9;
+	color: #005bff;
+	font-weight: 900;
+	border: 0.25vw solid white;
+}
+
+button {
+	width: 11vw;
+	font-size: 1.7vw;
+	border-radius: 1em;
+	cursor: pointer;
+	font-weight: 900;
+	border: 0.2vw solid #47474769;
+	background: #ffffff3d;
+	height: 7vh;
+	color: yellow;
+	box-shadow: 0 0.1em;
+	-webkit-text-stroke: black 1px;
+}
+
+input:hover{
+	background-color: #b1e8ff;
+}
+
+button:hover {
+	background-color: #e0e03a;
+	box-shadow: 0 0;
+}
+button:active{
+	transform: translateY(0.3vw);
+	box-shadow: 0 0.1em #5cb3ff;
+}
+
+#pilih-masuk {
+	margin-right: 1vw;
+}
+
+/* Style untuk konfirmasi */
+.pilihan {
+	display: inline-block;
+	padding: 1vw 1vw;
+	font-size: 16px;
+	background-color: #004896;
+	color: #fff;
+	border: none;
+	border-radius: 1vw;
+	cursor: pointer;
+	font-size: 1.5vw;
+	text-align: center;
+}
+.pilihan:hover {
+	background-color: #0056b3;
+}
+.pilihan:active {
+	background-color: #004080;
+}
+.confirm-dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+}
+#confirm-message {
+
+}
+.confirm-actions {
+	display: flex;
+	justify-content: center;
+}
+.confirm-btn {
+	margin: 0 10px;
+	padding: 8px 16px;
+	font-size: 14px;
+	background-color: #007BFF;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	}
+	.confirm-btn.cancel {
+	background-color: #6C757D;
+}
+
+.exitp{
+	width: 7vw;
+	height: 15vh;
+	display: flex;
+	margin-right: 2vw;
+	transform: translate(12vw,5vh);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border: 3px solid #FFFFFF;
+	filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 1));
+	border-radius: 18px;
+	cursor: pointer;
+	background: url(../gambar/exitp.png) no-repeat center;
+	background-size: 85%;
+	position: absolute;
+	right: 12vw;
+	bottom: 4vw;
+	width: 6vw;
+	height: 6vw;
+}
+
+.exitp:hover{
+	background-color: rgba(168, 230, 255, 0.74);
+}
+
+.exitp:active{
+	box-shadow: 0 5px #666;
+	transform: translate(12vw, 3vw);
+}

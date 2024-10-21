@@ -1,0 +1,437 @@
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	user-select: none;
+}
+
+body {
+	background-image: url(../gambar/bg3.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+header {
+	padding-top: 1vh;
+	padding-right: 3vw;
+	display: flex;
+	justify-content: end;
+}
+
+#nama-level {
+  flex: 1;
+  color: #b44848;
+  font-family: 'arial';
+  text-shadow: 5px 4px 4px rgba(0, 0, 0, 0.72);
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  font-weight: 600;
+  -webkit-text-stroke: 1.5px #a00000;
+  font-size: 2.5vw;
+  align-items: end;
+  padding-left: 3vw;
+  text-align: center;
+  line-height: 2.5vw;
+}
+
+.skor {
+	font-size: 5vw;
+	text-align: right;
+}
+
+#textskor {
+  color: #ffbf00;
+  font-family: 'arial';
+  text-shadow: 5px 4px 4px rgba(255, 255, 255, 0.75);
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  font-weight: 600;
+  -webkit-text-stroke: 1.5px #7f7f7f;
+  font-size: 3vw;
+  justify-content: end;
+  align-items: center;
+  margin-right: 3vw;
+  width: 100%;
+}
+
+#jumlahSkor {
+  color: #ffbf00;
+  font-family: 'arial';
+  text-shadow: 5px 4px 4px rgba(255, 255, 255, 0.75);
+  transition: transform 0.5s ease-in-out;
+  font-weight: 600;
+  -webkit-text-stroke: 1.5px #7f7f7f;
+}
+
+
+.main-container {
+	position: relative;
+	top: 3%;
+	left: 17vw;
+	width: 65vw;
+	height: 77vh;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 181, 255, 0.85) 53%), rgba(255, 255, 255, 0.76);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+	border-radius: 70px;
+}
+
+.pertanyaan {
+	display: flex;
+	width: 65vw;
+	height: 30vh;
+}
+#selesai{
+	position: absolute;
+	left: 15vw;
+	top: 2vw;
+	font-family: 'Bowlby One', cursive;
+	font-size: 7vw;
+	line-height: 70.97%;
+	text-transform: uppercase;
+	background: linear-gradient(91.57deg, rgba(250, 255, 0, 0.32) 48.67%, rgba(250, 255, 0, 0) 114.46%), white;;
+	text-shadow: 0px 4px 4px rgb(255, 0, 0);
+	color: #7c0000;
+	-webkit-text-stroke: wheat;
+	-webkit-text-stroke-width: thin;
+}
+
+#soal-benar, #jumlah-soal{
+	transform: translateY(26vw);
+  display: inline-flex;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  background: linear-gradient(91.57deg, rgba(0, 0, 0, 0.32) 48.67%, rgba(250, 255, 0, 0) 114.46%), #e3720f00;
+    background-repeat: repeat, repeat;
+    background-size: auto, auto;
+  text-shadow: 0px 4px 4px rgb(255, 0, 0);
+  color: #ffa600;
+  -webkit-text-stroke-width: thin;
+  font-weight: 800;
+  background-size: 101%;
+  background-repeat: no-repeat;
+}
+
+#bnext{
+	display: flex;
+	transform: translate(41vw, 30vw);
+	height: 7vw;
+	width: 7vw;
+	background: url(../gambar/next.png) no-repeat center;
+	border-radius: 100px;
+	cursor: pointer;
+	background-position-x: 1.5vw;
+	background-size: 70%;
+	border: white;
+	background-color: #006410;
+}
+#bnext:hover {
+	background-color: #219033;
+}
+
+#bnext:active {
+  	box-shadow: 0 5px #666;
+	transform: translate(41vw, 31vw);
+}
+
+.soal{
+	width: 45vw;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 12.5vw;
+	letter-spacing: 0.5vw;
+	text-transform: uppercase;
+	color: #24FF00;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+	user-select: none;
+ 	-webkit-text-stroke: 7px white;
+	text-align: center;
+	line-height: 15vw;
+}
+
+
+input{
+	width: 15vw;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11vw;
+	letter-spacing: 0.5vw;
+	text-transform: uppercase;
+	color: #03DCFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+	background-color: #77ff06;
+ 	border: none;
+ 	pointer-events: none;
+	text-align: center;
+ 	background-clip: text;
+ 	-webkit-text-stroke: 7px white;
+}
+
+.pilJawaban {
+	transform: translateY(2vh);
+	display: table;
+	width: 100%;
+}
+
+.pilBaris {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1vh;
+}
+
+iframe{
+	position: absolute;
+	bottom: 15vh;
+	left: 22vw;
+	width: 55vw;
+	height: 65vh;
+	border: gray;
+	border-radius: 20px;
+}
+.pilihan {
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 5vw;
+	font-family: 'Tienne';
+	font-style: normal;
+	font-weight: 700;
+	line-height: 8.5vh;
+	width: 15vw;
+	background: linear-gradient(180deg, #FFE600 0.31%, rgba(255, 230, 0, 0) 100%);
+	border: 5px solid rgba(147, 147, 147, 0.68);
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 45px;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+	cursor: pointer;
+	user-select: none;
+}
+
+#pilihan0{
+	width: 21vw;
+}
+
+#pilihanX, #pilihanY{
+	width: 10vw;
+	position: relative;
+	align-self: center;
+}
+
+#pilihan1, #pilihan2, #pilihan4, #pilihan5, #pilihan7, #pilihan8, #pilihanX, #pilihan0 {
+	margin-right: 1vw;
+}
+
+
+.pilihan:hover{
+	background-color: #566621;
+}
+
+.pilihan:active {
+  	box-shadow: 0 5px #666;
+		transform: translateY(0.3vw);
+}
+
+footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0.5vw;
+	right: 2.5vw;
+}
+
+#petunjuk {
+  width: 74vw;
+  height: 74.8vh;
+  bottom: 8vh;
+  left: 12vw;
+  background-color: beige;
+}
+
+.jeda{
+	float: right;
+	height: 5vw;
+	width: 5vw;
+	background-image: url(../gambar/jeda.png);
+	background-size: 90%;
+	border: none;
+	border-radius: 100px;
+	background-repeat: no-repeat;
+	background-color: #006410;
+	cursor: pointer;
+	background-position: bottom;
+}
+
+.jeda:hover {
+	background-color: #219033;
+}
+
+.jeda:active {
+  	box-shadow: 0 5px #666;
+  	transform: translateY(4px);
+}
+.blanjut{
+	float: right;
+	display: flex;
+	transform: translateX(5vw);
+	height: 5vw;
+	width: 5vw;
+	background: url(../gambar/lanjut.png) no-repeat center;
+	border-radius: 100px;
+	background-color: #006410;
+	cursor: pointer;
+	background-position-x: 1.2vw;
+	background-position-y: 0.7vw;
+	background-size: 70%;
+	border: white;
+}
+.blanjut:hover {
+	background-color: #219033;
+}
+
+.blanjut:active {
+  	box-shadow: 0 5px #666;
+		transform: translate(5vw, 0.5vw);
+}
+
+@keyframes slideIn {
+  0% {
+  	opacity: 0.5;
+  	transform: translateY(-3vw);
+  }
+  100% {
+  	transform: translateY(0);
+  }
+}
+
+#success-subt3, #success-mult3, #success-div3{
+	width: 45vw;
+    left: 27vw;
+    bottom: 7.5vw;
+    height: 26vw;
+}
+
+#gambar-benar{
+	left: -9vw;
+  top: 1vw;
+	opacity: 0;
+	transition: opacity 2s ease;
+}
+
+#gambar-salah{
+	right: -8vw;
+  top: 1.5vw;
+	opacity: 0;
+	transition: opacity 2s ease;
+}
+
+@media screen and (max-width:768px) {
+	div#nama-level {
+        font-size: 6vw;
+        line-height: 25px;
+    }
+	span#textskor {
+		font-size: 6vw;
+	}
+	div#jumlahSkor {
+		align-self: center;
+		font-size: 8vw;
+	}
+	.main-container {
+		height: 48%;
+		width: 96%;
+		left: 2%;
+	}
+	.pertanyaan {
+		height: auto;
+		justify-content: center;
+		width: 100%;
+		padding: 4vw 0;
+	}
+	div#soal {
+		-webkit-text-stroke: 2px white;
+		font-size: 16vw;
+		width: fit-content;
+	}
+	input#jawaban {
+		-webkit-text-stroke: 2px white;
+		font-size: 14vw;
+		width: 25%;
+		line-height: 15vw;
+	}
+	img#gambar-benar {
+		width: 30%;
+        left: -8%;
+        top: 12%;
+	}
+	img#gambar-salah {
+		width: 30%;
+        left: 74%;
+        top: 12%;
+	}
+	.pilJawaban {
+		transform: translateY(0vh);
+	}
+	.pilBaris {
+		margin: 0;
+		align-items: center;
+		height: 20vw;
+	}
+	.pilihan {
+		width: 20vw;
+		height: 16vw;
+		line-height: 0;
+		border-radius: 24px;
+		font-size: 8vw;
+	}
+	#pilihanX, #pilihanY {
+		width: 16vw;
+	}
+	span#selesai {
+		left: 20%;
+		top: 4%;
+		font-size: 12vw;
+	}
+	button#bnext {
+		transform: translate(16vw, 34vh);
+		width: 16vw;
+		height: 16vw;
+		background-position-x: 3.5vw;
+	}
+	#bnext:active {
+		box-shadow: 0 5px #666;
+		transform: translate(16vw, 35vh);
+	}
+	footer {
+		top: 60%;
+	}
+	button#lanjut {
+		background-position-x: 3.2vw;
+		background-position-y: 2.4vw;
+		transform: translateX(16vw);
+	}
+	button#jeda, .blanjut {
+		height: 16vw;
+		width: 16vw;
+	}
+	iframe, #petunjuk {
+		width: 96%;
+		left: 2%;
+		height: 40%;
+		top: 10%;
+	}
+	#petunjuk {
+		height: 44%;
+        top: 12%;
+	}
+	iframe#success-subt3, iframe#success-mult3, iframe#success-div3 {
+		left: 1.5%;
+		width: 96%;
+		height: 27%;
+		top: 16%;
+	}
+	#soal-benar, #jumlah-soal {
+		transform: translate(-12vw, 24vh);
+        font-size: 3.1vw;
+	}
+}

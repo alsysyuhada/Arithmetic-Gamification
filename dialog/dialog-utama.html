@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		overflow: hidden;
+	}
+
+	.box {
+		background-color: rgba(255, 255, 255, 0.85);
+		border: 5px solid rgb(0, 182, 255);
+		border-radius: 2vw;
+		width: 99%;
+		height: 47vw;
+	}
+
+	.piala-penjumlahan, .piala-pengurangan, .piala-perkalian, .piala-pembagian{
+		background-size: 85%;
+		height: 20vw;
+		width: 14vw;
+	}
+
+	.halo-selamat-datang {
+		-webkit-text-stroke: 0.1vw #ffe500;
+		font-family: "Press Start 2P-Regular", Helvetica;
+		font-weight: 800;
+		color: #000000;
+		font-size: 3.5vw;
+		text-align: center;
+		letter-spacing: 0.1vw;
+		width: 70vw;
+		line-height: 1;
+		margin: 0;
+	}
+
+	.grup-box{
+		display: grid;
+		place-items: center;
+		height: 45vw;
+		padding: 1vw;
+	}
+
+	.main-box{
+		display: flex;
+		place-items: end;
+		width: 90vw;
+		place-content: center;
+	}
+
+	.koala{
+		height: 24vw;
+		width: 20vw;
+		background: url(../gambar/koala.png) no-repeat center;
+		background-size: 100%;
+	}
+
+	.piala-penjumlahan{
+		background: url(../gambar/ppenjumlahanfull.png) no-repeat center;
+		background-size: 80%;
+	}
+
+	.piala-pengurangan{	
+		background: url(../gambar/ppenguranganfull.png) no-repeat center;
+		background-size: 80%;
+	}
+
+	.piala-perkalian{
+		background: url(../gambar/pperkalianfull.png) no-repeat center;
+		background-size: 80%;
+	}
+
+	.piala-pembagian{
+		background: url(../gambar/ppembagianfull.png) no-repeat center;
+		background-size: 80%;
+	}
+
+	#next{
+		height: 8vw;
+		width: 8vw;
+		background: url(../gambar/next.png) no-repeat center;
+		border-radius: 100px;
+		cursor: pointer;
+		background-position-x: 1.5vw;
+		background-size: 70%;
+		border: white;
+		background-color: #006410;
+		margin-left: 8vw;
+	}
+
+	#next:hover{
+		background-color: #219033;
+	}
+
+	#next:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(4px);
+	}
+
+	@media screen and (max-width: 768px) {
+		.box {
+			height: 92vh;
+		}
+
+		p.halo-selamat-datang {
+			font-size: 16px;
+			width: 100%;
+			padding-top: 12px;
+		}
+
+		.koala {
+			height: 46vw;
+			width: 20vw;
+			background-size: 100% 72%;
+		}
+
+		.piala-penjumlahan, .piala-pengurangan, .piala-perkalian, .piala-pembagian{
+			background-size: 80% 56%;
+			height: 40vw;
+			width: 16vw;
+			background-position-y: 80%;
+		}
+
+		#next {
+			width: 12vw;
+			height: 12vw;
+			margin: 10px 0;
+		}
+	}
+</style>
+<body>
+    <div class="box">
+		<div class="grup-box">
+			<p class="halo-selamat-datang">HALO! SELAMAT DATANG, AYO BELAJAR! KUMPULKAN POIN DAN DAPATKAN PIALANYA</p>
+			<div class="main-box">
+				<div class="koala"> </div>
+				<div class="piala-penjumlahan"> </div>
+				<div class="piala-pengurangan"> </div>
+				<div class="piala-perkalian"> </div>
+				<div class="piala-pembagian"> </div>
+				<div id="next" onclick="kirimProgress();"> </div>
+			</div>
+      </div>
+    </div>
+    <script>
+    	function kirimProgress(){
+    		var xhr1 = new XMLHttpRequest();
+		    xhr1.open('POST', '../data/simpan_progres.php', true);
+		    xhr1.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		    xhr1.onreadystatechange = function () {
+		        if (xhr1.readyState === 4) {
+		            console.log(xhr1.status);
+		            console.log(xhr1.responseText);
+		            if (xhr1.status === 200) {
+		                console.log('Progres dialog berhasil dikirim');
+		            } else {
+		                console.log('Terjadi kesalahan saat mengirim progres dialog');
+		            }
+		        }
+		    };
+		    xhr1.send('dialogUtama=');
+    	}
+    </script>
+  </body>
+</html>

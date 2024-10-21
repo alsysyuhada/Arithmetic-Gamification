@@ -1,0 +1,16 @@
+@media screen and (max-width: 768px) {
+    .box {
+        height: 40vw;
+        display: flex;
+        align-items: self-end;
+    }
+
+    .owl {
+        height: 24vw;
+        width: 20vw;
+    }
+
+    p.ayo-kerjakan {
+        font-size: 5vw;
+    }
+}

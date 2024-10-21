@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body{
+	overflow: hidden;
+	}
+
+	.grup-box{
+		height: 28vw;
+		padding: 1vw;
+		display: flex;
+		place-items: end;
+		width: 97vw;
+		place-content: center;
+		background-color: rgba(255, 255, 255, 0.85);
+	}
+
+	.owl{
+		height: 22vw;
+		width: 18vw;
+		background: url(../gambar/owl.png) no-repeat center;
+		background-size: 100%;
+	}
+
+	.hore{
+		-webkit-text-stroke: 0.1vw #00b6ff;
+		font-family: "Press Start 2P-Regular", Helvetica;
+		font-weight: 800;
+		color: #000000;
+		font-size: 3vw;
+		text-align: center;
+		letter-spacing: 0.1vw;
+		width: 70vw;
+		line-height: 1;
+		margin: 0;
+	}
+
+	#next{
+		height: 9vw;
+		width: 9vw;
+		background: url(../gambar/next.png) no-repeat center;
+		border-radius: 100px;
+		cursor: pointer;
+		background-position-x: 1.5vw;
+		background-size: 70%;
+		border: white;
+		background-color: #006410;
+	}
+
+	#next:hover{
+		background-color: #219033;
+	}
+
+	#next:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(1vw);
+	}
+</style>
+<body>
+	<div class="grup-box">
+		<div class="owl"> </div>
+		<p class="hore">HORE, KAMU SUDAH MEMBUKA LEVEL 2, SELESAIKAN LEVEL 2 UNTUK BUKA LEVEL 3 DAN DAPATKAN POIN LEBIH BANYAK</p>
+		<div id="next"> </div>
+	</div>
+	<audio id="suara-tombol" src="../Sound/tombol.mp3"></audio>
+</body>
+    <script>
+    	var suara = document.getElementById("suara-tombol");
+		document.getElementById("next").addEventListener("click", () => {
+			suara.play();
+		});
+    </script>
+</html>

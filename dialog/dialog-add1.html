@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body{
+	overflow: hidden;
+	}
+
+	.box {
+		background-color: rgba(255, 255, 255, 0.85);
+		border-radius: 2vw;
+		width: 99%;
+		height: 47vw;
+	}
+
+	.kamu-memasuki {
+		-webkit-text-stroke: 0.1vw #a0754e;
+		font-family: "Press Start 2P-Regular", Helvetica;
+		font-weight: 800;
+		color: #000000;
+		font-size: 3.5vw;
+		text-align: center;
+		letter-spacing: 0.1vw;
+		width: 70vw;
+		line-height: 1;
+		margin: 0;
+	}
+
+	.grup-box{
+		display: grid;
+		place-items: center;
+		height: 45vw;
+		padding: 1vw;
+	}
+
+	.main-box{
+		display: flex;
+		place-items: end;
+		width: 90vw;
+		place-content: center;
+	}
+
+	.owl{
+		height: 22vw;
+		width: 18vw;
+		background: url(../gambar/owl.png) no-repeat center;
+		background-size: 100%;
+	}
+
+	.selesaikan-semua{
+		-webkit-text-stroke: 0.1vw #00b6ff;
+		font-family: "Press Start 2P-Regular", Helvetica;
+		font-weight: 800;
+		color: #000000;
+		font-size: 3.5vw;
+		text-align: center;
+		letter-spacing: 0.1vw;
+		width: 70vw;
+		line-height: 1;
+		margin: 0;
+	}
+
+	#next{
+		height: 9vw;
+		width: 9vw;
+		background: url(../gambar/next.png) no-repeat center;
+		border-radius: 100px;
+		cursor: pointer;
+		background-position-x: 1.5vw;
+		background-size: 70%;
+		border: white;
+		background-color: #006410;
+	}
+
+	#next:hover{
+		background-color: #219033;
+	}
+
+	#next:active{
+		box-shadow: 0 5px #666;
+		transform: translateY(1vw);
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="grup-box">
+			<p id="pelajaran" class="kamu-memasuki">KAMU MEMASUKI PELAJARAN PENJUMLAHAN</p>
+			<div class="main-box">
+				<div class="owl"> </div>
+				<p id="piala-pelajaran" class="selesaikan-semua">SELESAIKAN SEMUA LEVELNYA DAN DAPATKAN PIALA PENJUMLAHANMU</p>
+				<div id="next"> </div>
+			</div>
+    	</div>
+    </div>
+    <audio id="suara-tombol" src="../Sound/tombol.mp3"></audio>
+</body>
+    <script>
+    	var suara = document.getElementById("suara-tombol");
+		document.getElementById("next").addEventListener("click", () => {
+			suara.play();
+		});
+    </script>
+</html>

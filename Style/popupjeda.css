@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+html, body {
+	height: 70%;
+	width: 70%;
+}
+
+body {
+	margin: auto;
+	padding: 0;
+	background-image: url(../gambar/bgpopup.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	position: fixed;
+}
+
+h1 {
+	font-family: 'Titan One', cursive;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 4vw;
+	display: flex;
+	transform: translate(19.5vw,13vh);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	-webkit-text-stroke: 2px black;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+	display: flex;
+	transform: translate(22vw,11vh);
+	width: 25vw;
+	height: 18vh;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(74, 180, 223, 0.85) 58.65%), rgba(255, 255, 255, 0.76);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 70px;
+}
+
+
+.homep, .backp{
+	width: 5vw;
+	height: 11vh;
+	display: flex;
+	margin-right: 2vw;
+	transform: translate(6.5vw,3.5vh);
+	background-color: rgba(255, 255, 255, 0);
+	border: 3px solid rgba(255, 255, 255, 1);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border: 3px solid #FFFFFF;
+	filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
+	border-radius: 18px;
+	cursor: pointer;
+}
+#rumah{
+	display: flex;
+	transform: translate(-0.3vw, 1.2vh);
+}
+
+#kembali{
+	display: flex;
+	transform: translate(0.2vw, 1.2vh);
+}
+
+.blanjut{
+	float: right;
+	display: flex;
+	transform: translateY(18vh);
+	height: 5vw;
+	width: 5vw;
+	-webkit-stroke: 1px white;
+	border-radius: 100px;
+	background-color: #006410;
+	cursor: pointer;
+	margin-right: 2vw;
+}
+
+#lanjut {
+	display: flex;
+	transform: translate(0.8vw, 1.2vh);
+}
+
+.homep:hover, .backp:hover{
+	background-color: rgba(168, 230, 255, 0.74);
+}
+
+
+.homep:active, .backp:active{
+	box-shadow: 0 5px #666;
+	transform: translate(6.5vw, 5vh);
+}
+
+.blanjut:hover {
+	background-color: #219033;
+}
+
+.blanjut:active {
+  	box-shadow: 0 5px #666;
+  	transform: translate(0vw, 16vh);
+}
